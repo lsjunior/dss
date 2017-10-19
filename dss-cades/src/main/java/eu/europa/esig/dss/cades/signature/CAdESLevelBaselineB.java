@@ -42,6 +42,7 @@ import org.bouncycastle.asn1.ASN1EncodableVector;
 import org.bouncycastle.asn1.ASN1GeneralizedTime;
 import org.bouncycastle.asn1.ASN1Object;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.DERIA5String;
 import org.bouncycastle.asn1.DEROctetString;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.DERSet;
@@ -424,7 +425,7 @@ public class CAdESLevelBaselineB {
 
 				if (Utils.isStringNotEmpty(policy.getSpuri())) {
 					SigPolicyQualifierInfo policyQualifierInfo = new SigPolicyQualifierInfo(PKCSObjectIdentifiers.id_spq_ets_uri,
-							new DERUTF8String(policy.getSpuri()));
+							new DERIA5String(policy.getSpuri()));
 					SigPolicyQualifierInfo[] qualifierInfos = new SigPolicyQualifierInfo[] { policyQualifierInfo };
 					SigPolicyQualifiers qualifiers = new SigPolicyQualifiers(qualifierInfos);
 
